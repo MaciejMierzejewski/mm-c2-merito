@@ -1,0 +1,81 @@
+print("Let's choose our destination! ")
+userChoice = input("Choose, where would you like to go first: pizza or rollercoaster: ")
+if userChoice == "pizza":
+    print("It's not the best idea to eat before a rollercoaster ride!")
+elif userChoice == "rollercoaster":
+    print("Welcome to the rollercoaster!")
+    height = int(input("What is your height in cm?: "))
+    rollerCoasterBill = 0
+
+    if height >= 120:
+        print("You can ride the rollercoaster.")
+        age = int(input("How old are you?: "))
+        if age < 12:
+            rollerCoasterBill = 5
+            print("Child tickets are $5.")
+        elif age <= 18:
+            rollerCoasterBill = 7
+            print("Youth tickets are $7.")
+        else:
+            rollerCoasterBill = 12
+            print("Tickets are $12.")
+        wantsPhoto = input("Do you want a photo? Y or N: ")
+        if wantsPhoto == "Y":
+            print(f"You have to pay $3 more. Price is: ${rollerCoasterBill + 3}\n")
+        elif wantsPhoto == "N":
+            print(f"Okay, your ticket costs: ${rollerCoasterBill}\n")
+        else:
+            print("You have misspelled. Start again.")
+        
+        print("After a wonderful ride! You feel really amused! You decided to visit your favourite pizzeria.\n")
+        print("Welcome to Python's pepperoni pizza!\n")
+    
+        pizzaBill = 0
+    
+        size = input("What size pizza do you want? S, M, L: ")
+        if size == "S":
+            pizzaBill += 15
+            print(f"It costs ${pizzaBill}.\n")
+        elif size == "M":
+            pizzaBill += 20
+            print(f"Medium pizza costs... ${pizzaBill}.\n")
+        else:
+                pizzaBill += 25
+                print(f"${pizzaBill} for a large one!\n")
+    
+        addPepperoni = input("Would you like some extra pepperoni? Y or N: ")
+        if addPepperoni == "Y":
+            if size == "S":
+                pizzaBill += 2
+                print(f"A small pizza with extra pepperoni costs ${pizzaBill}.\n")
+            else:
+                pizzaBill += 3
+                print(f"Okay... Pizza with extra pepperoni costs ${pizzaBill}.\n")
+    
+        extraCheese = input("Maybe some extra cheese? Y or N: ")
+        if extraCheese == "Y":
+            pizzaBill += 1
+            print(f"Extra cheese...Yummy. ${pizzaBill} for the whole order.\n")
+        else:
+            print(f"You final bill is: ${pizzaBill}.\n")
+
+        print("Payment time! We all know, that tips are very important...\n")
+        
+        tip = int(input("What percentage tip would you like to give? 10, 12, 15? :%"))
+
+        billWithTip = float(pizzaBill) * (1 + tip / 100)
+        billWithTip2 = "{:.2f}".format(billWithTip)
+        
+        
+        print(f"The whole order costs: ${billWithTip2}\n")
+
+        print("That was such a lovely evening! Time to go home, see you on Saturday!")
+
+    else: 
+        print("You are to short to ride a rollercoaster! Come back home! \n")
+        
+
+else:
+    print("Maybe you have misspeled the word? Try again!")
+
+    
